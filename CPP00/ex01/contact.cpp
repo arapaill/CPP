@@ -6,13 +6,13 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 11:29:39 by user42            #+#    #+#             */
-/*   Updated: 2022/01/19 14:37:59 by user42           ###   ########.fr       */
+/*   Updated: 2022/01/19 15:35:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-void Contact::new_contact()
+void	Contact::new_contact()
 {
 	std::cout << "First name : " << std::endl;
 	std::getline(std::cin, this->first_name);
@@ -26,11 +26,18 @@ void Contact::new_contact()
 	std::getline(std::cin, this->darkest_secret);
 }
 
-void Contact::get_info()
+std::string	Contact::check_width(std::string val)
 {
-    std::cout << this->first_name << "|";
-    std::cout << this->last_name << "|";
-    std::cout << this->nickname << "|";
+	if (val.length() > 10)
+		return (val.substr(0, 9) + '.');
+	return (val);
+}
+
+void	Contact::get_info()
+{
+    std::cout << std::setw(10) << check_width(this->first_name) << "|";
+    std::cout << std::setw(10) << check_width(this->last_name) << "|";
+    std::cout << std::setw(10) << check_width(this->nickname) << "|";
     std::cout << std::endl;
 }
 

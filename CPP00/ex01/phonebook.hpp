@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 11:28:34 by user42            #+#    #+#             */
-/*   Updated: 2022/01/19 14:17:13 by user42           ###   ########.fr       */
+/*   Updated: 2022/01/19 15:34:16 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 # define PHONEBOOK_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <sstream>
+#include <cctype>
 #include "Contact.hpp"
 
 class Phonebook

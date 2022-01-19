@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 13:56:44 by user42            #+#    #+#             */
-/*   Updated: 2022/01/19 14:35:51 by user42           ###   ########.fr       */
+/*   Updated: 2022/01/19 15:33:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,20 @@ void	Phonebook::add_contact()
 
 void	Phonebook::search_contact()
 {
-	int		index;
-	int		search_size;
+	int			index;
+	std::string str_index;
+	int			search_size;
 
 	search_size = 0;
-	std::cout << "Enter the index one of the following contact: "<< std::endl;
-	while(search_size < this->size)
+	std::cout << "Enter the index of one of the following contacts: "<< std::endl;
+	while (search_size < this->size)
 	{
-		std::cout << search_size << "|";
+		std::cout << std::setw(10) << search_size << "|";
 		this->contact[search_size].get_info();
 		search_size++;
 	}
-	std::cin >> index;
+	std::getline(std::cin, str_index);
+	std::istringstream(str_index) >> index;
 	if (index < 0 || index > 7)
 		std::cout << "Wrong Index"<< std::endl;
 	else

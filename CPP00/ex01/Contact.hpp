@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 10:17:29 by user42            #+#    #+#             */
-/*   Updated: 2022/01/19 14:01:21 by user42           ###   ########.fr       */
+/*   Updated: 2022/01/19 15:32:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ class Contact
 	std::string	darkest_secret;
 	
 	public:
-		void new_contact(void);
+		void	new_contact(void);
 		void	get_info(void);
 		void	display_contact(void);
+		std::string	check_width(std::string val);
 };
 
 #endif
