@@ -1,53 +1,17 @@
-NAME		:= a.out
+CPP = clang++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CXX			:= clang++
+NAME = ex03
+SRC = main.cpp weapon.cpp HumanA.cpp HumanB.cpp
 
-CXXFLAGS	:= -Wall -Wextra -Werror -MMD -MP -std=c++98
+all: $(NAME)
 
-SRCSDIR		:= srcs/
-
-OBJSDIR		:= objs/
-
-SRCS		:= main.cpp \
-				Weapon.cpp \
-				HumanA.cpp \
-				HumanB.cpp
-
-OBJS		:= $(addprefix $(OBJSDIR), $(SRCS:.cpp=.o))
-
-DEPS		:= $(OBJS:.o=.d)
-
-SRCS		:= $(addprefix $(SRCSDIR), $(SRCS))
-
-VPATH		:= $(SRCSDIR)
-
-INCLUDE		:= -I./include
-
-RM			:= rm -rf
-
-DEBUG		:= -g# -fsanitize=address
-
-all:		$(NAME)
-
-$(NAME):	$(OBJS)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) $^ -o $@
-
-$(OBJSDIR)%.o: %.cpp
-	@if [ ! -d $(OBJSDIR) ]; then mkdir $(OBJSDIR); fi
-	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+$(NAME): $(SRC)
+	$(CPP) $(CPPFLAGS) $^ -o $@
 
 clean:
-	$(RM) $(OBJSDIR)
-	$(RM) *.dSYM
+	rm -f $(NAME)
 
-fclean:		clean
-	$(RM) $(NAME)
+fclean: clean
 
-re:			fclean all
-
-debug:		CXXFLAGS += $(DEBUG)
-debug:		re
-
--include $(DEPS)
-
-.PHONY:		all clean fclean re debug
+re: fclean all
