@@ -2,7 +2,7 @@ CPP = clang++
 CPPFLAGS = -Wall -Wextra -Werror
 
 NAME = exec
-SRC = test.cpp
+SRC = tests.cpp Account.cpp
 
 all: $(NAME)
 
