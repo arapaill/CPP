@@ -9,4 +9,5 @@ int main()
 	z2->announce();
 	delete z2;
 	randomChump("zombie 3");
+    return (0);
 }

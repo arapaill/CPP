@@ -1,4 +1,4 @@
-CPP = clang++
+CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = Karen
 SRC = main.cpp Karen.cpp

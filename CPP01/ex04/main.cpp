@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 
-int ft_exit(char *str)
+int ft_exit(std::string str)
 {
     std::cerr << str << std::endl;
     return(1);

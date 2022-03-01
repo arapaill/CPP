@@ -15,14 +15,22 @@ int	main(int argc, char **argv)
 	switch(lvl)
 	{
 		case 0 :
+        {
 			karen.complain("DEBUG");
+        }
 		case 1 :
+        {
 			karen.complain("INFO");
+        }
 		case 2 :
+        {
 			karen.complain("WARNING");
+        }
 		case 3 :
+        {
 			karen.complain("ERROR");
 			break ;
+        }
 		default :
 			std::cout << "[ Probably complaining about insignificant problem. ]" << std::endl;
 	}
