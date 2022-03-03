@@ -13,7 +13,7 @@ ClapTrap::ClapTrap(ClapTrap & src)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << " AAAAAAAAARGGG !" << std::endl;
+	std::cout << _name << ": AAAAAAAAARGGG !" << std::endl;
 }
 
 int ClapTrap::getHitPoints(void)
@@ -48,23 +48,23 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (_EP > 0 && _HP > 0)
 	{
-		std::cout	<< "take this !" << std::endl;
-		std::cout	<< "ClapTrap " << _name << " attacks " << target 
+		std::cout	<< _name << ": take this !" << std::endl;
+		std::cout	<< _name << " attacks " << target 
 					<< std::endl;
 		_EP -= 1;
 	}
 	else if (_EP <= 0)
-		std::cout	<< "ClapTrap " << _name << " has not enough energy to attack ! (" << _EP << ")" << std::endl;
+		std::cout	<< _name << " has not enough energy to attack ! (" << _EP << ")" << std::endl;
  	else if (_HP <= 0)
-		std::cout	<< "ClapTrap " << _name << " has not enough hitpoint to attack ! (" << _HP << ")" << std::endl;
+		std::cout	<< _name << " has not enough hitpoint to attack ! (" << _HP << ")" << std::endl;
 
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_HP > 0)
 	{
-		std::cout	<< "I am a robot ! I don't feel pai- AOUTCH !" << std::endl;
-		std::cout	<< "ClapTrap " << _name << " receive " << amount << " points of damage !"
+		std::cout	<< _name <<  ": I am a robot ! I don't feel pai- AOUTCH !" << std::endl;
+		std::cout	<< _name << " receive " << amount << " points of damage !"
 					<< std::endl;
 		_HP -= amount;
 		if (_HP < 0)
@@ -73,14 +73,14 @@ void ClapTrap::takeDamage(unsigned int amount)
 			std::cout << _name << " Died in aweful robotic pain" << std::endl;
 	}
 	else
-		std::cout << _name << " is already in the ClapTrap paradise" << std::endl;
+		std::cout << _name << " is already in the ClapTraps paradise" << std::endl;
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_EP > 0 && _HP > 0)
 	{
-		std::cout << "Nothing duck tape can't fix !"<< std::endl;
-		std::cout	<< "ClapTrap " << _name << " repair himself + " 
+		std::cout   << _name << ": Nothing duck tape can't fix !"<< std::endl;
+		std::cout	<< _name << " repair himself + " 
 					<< amount << std::endl;
 		_HP += amount;
 		_EP -= 1;

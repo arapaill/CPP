@@ -9,7 +9,7 @@ class ClapTrap
 {
     public:
         ClapTrap(std::string const name);
-	    ClapTrap(ClapTrap & src);
+	    ClapTrap(ClapTrap &src);
         ~ClapTrap();
 
         void attack(const std::string& target);
@@ -22,7 +22,7 @@ class ClapTrap
 		int			getAttackDamage(void);
 
         ClapTrap & operator=(ClapTrap & rhs);
-    private:
+    protected:
         std::string _name;
         int 		_HP;
         int 		_EP;
