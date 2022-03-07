@@ -7,13 +7,13 @@ Cat::Cat(void) : Animal("Cat")
 
 Cat::Cat(const Cat &cat) : Animal("Cat")
 {
-	std::cout << "Cat constructor called" << std::endl;
+	std::cout << "Cat copy constructor called" << std::endl;
 	*this = cat;
 }
 
 Cat::~Cat(void)
 {
-    std::cout << "Animal destructor callled" << std::endl;
+    std::cout << "Cat destructor callled" << std::endl;
 }
 
 Cat	&Cat::operator=(const Cat &cat)
